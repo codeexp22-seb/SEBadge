@@ -1,0 +1,52 @@
+.topBar {
+  align-items: center;
+  padding: 1em 2em;
+  margin: 1em 3em;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.topBarTitle {
+  font-weight: bold;
+  color: var(--seb-green-darker);
+  font-size: 2rem;
+  display: block;
+  width: fit-content;
+  flex: auto 1 0;
+}
+
+.topBarButton {
+  text-decoration: none;
+  background-color: transparent;
+  border: 3px solid var(--seb-green);
+  border-radius: 6px;
+  color: var(--seb-green);
+  font-size: 1rem;
+  display: block;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s;
+  flex: auto 0 0;
+  text-align: center;
+}
+
+.topBarButton:hover, .topBarButton:focus {
+  background-color: var(--seb-green);
+  border-color: var(--seb-green);
+  color: white;
+}
+
+.topBarButton:active {
+  background-color: var(--seb-green-darker);
+  border-color: var(--seb-green-darker);
+  color: white;
+}
+
+@media only screen and (max-width: 576px) {
+  .topBar {
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 1em;
+  }
+}
