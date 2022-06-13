@@ -1,16 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --seb-green: #60A964;
-  --seb-green-faded: #ABC9AC;
+  --seb-green: #60a964;
+  --seb-green-faded: #abc9ac;
   --seb-green-darker: #438146;
 }
 
 html,
-body {
+body,
+body > div {
   padding: 0;
   margin: 0;
   font-family: Inter, Roboto, Helvetica Neue, sans-serif;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 3rem;
+  flex: auto 1 1;
 }
 
 a {
