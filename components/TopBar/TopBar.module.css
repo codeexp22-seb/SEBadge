@@ -39,8 +39,8 @@
 }
 
 .topBarButton:active {
-  background-color: var(--seb-green);
-  border-color: var(--seb-green);
+  background-color: var(--seb-green-darker);
+  border-color: var(--seb-green-darker);
   color: white;
 }
 
