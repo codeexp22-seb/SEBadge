@@ -1,5 +1,6 @@
 .title {
   font-size: 2rem;
+  margin: 1rem 0;
 }
 
 .form {
@@ -76,13 +77,7 @@
   gap: 1em;
 }
 
-.textColumn {
-  display: flex;
-  flex-direction: column;
-  flex: auto 1 1;
-  max-width: 50%;
-}
-
+.textColumn,
 .imageColumn {
   display: flex;
   flex-direction: column;
@@ -93,4 +88,38 @@
 .bodyText {
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .verifyFormContainer {
+    flex: auto 1 1;
+    text-align: center;
+  }
+
+  .topRow {
+    flex-direction: column;
+    align-items: center;
+    min-height: fit-content;
+  }
+
+  .textColumn,
+  .imageColumn {
+    width: 100vw;
+    min-height: 5em;
+  }
+
+  .imageColumn {
+    order: 1;
+    max-height: 30vmax;
+  }
+
+  .textColumn {
+    order: 2;
+    min-width: 50vw;
+  }
+
+  .inputRow {
+    flex-direction: column;
+    align-items: center;
+  }
 }
