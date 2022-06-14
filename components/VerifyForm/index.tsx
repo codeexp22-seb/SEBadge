@@ -13,7 +13,17 @@ const VerifyForm = (props: {
 
   function submitForm() {
     if (idToVerify) {
-      Router.push(`/verify/${idToVerify}`);
+      if (idToVerify.split("/").length >= 2) {
+        // (probably) URL
+        let path = "";
+        let pathArray = idToVerify.split("/");
+        path = path + pathArray.pop();
+        path = pathArray.pop() + "/" + path;
+        Router.push(path);
+      } else {
+        // UUID
+        Router.push(`/verify/${idToVerify}`);
+      }
     } else {
       return;
     }
@@ -27,18 +37,20 @@ const VerifyForm = (props: {
           <div className={styles.bodyText}>{props.children}</div>
         </div>
         <div className={styles.imageColumn}>
-        <Image
-          src={props.imageSrc}
-          width="100%"
-          height="100%"
-          objectFit="contain"
-          alt=""
-          layout="responsive"
-        />
+          <Image
+            src={props.imageSrc}
+            width="100%"
+            height="100%"
+            objectFit="contain"
+            alt=""
+            layout="responsive"
+          />
         </div>
       </div>
       <div className={styles.form}>
-        <label htmlFor="badgeid" className={styles.textboxLabel}>Badge ID or URL:</label>
+        <label htmlFor="badgeid" className={styles.textboxLabel}>
+          Badge ID or URL:
+        </label>
         <div className={styles.inputRow}>
           <input
             className={styles.textbox}
