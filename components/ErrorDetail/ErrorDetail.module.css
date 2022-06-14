@@ -12,7 +12,8 @@
   align-items: center;
 }
 
-.textCol, .imageCol {
+.textCol,
+.imageCol {
   display: flex;
   flex: auto 1 1;
   max-width: 50%;
@@ -22,5 +23,21 @@
 @media only screen and (max-width: 768px) {
   .errorPageContainer {
     flex-direction: column;
+  }
+
+  .textCol,
+  .imageCol {
+    width: 100vw;
+    min-height: 5em;
+  }
+
+  .imageCol {
+    order: 1;
+    max-height: 30vmax;
+  }
+
+  .textCol {
+    order: 2;
+    min-width: 50vw;
   }
 }
