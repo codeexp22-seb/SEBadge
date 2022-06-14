@@ -18,12 +18,12 @@ const VerifyForm = (props: {
         // (probably) URL
         let path = "";
         let pathArray = idToVerify.split("/");
-        path = path + pathArray.pop();
+        path = path + pathArray.pop()?.toUpperCase();
         path = "/" + pathArray.pop() + "/" + path;
         Router.push(path);
       } else {
         // UUID
-        Router.push(`/verify/${idToVerify}`);
+        Router.push(`/verify/${idToVerify.toUpperCase()}`);
       }
     } else {
       return;

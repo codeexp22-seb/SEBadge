@@ -17,17 +17,14 @@ async function handler(req: NextApiRequest, res: NextApiResponse<VerifyData>) {
   const uuid = req.query.id as string;
 
   // Check UUID validity
-  if (uuid !== "badgeID") {
-    // TODO: delete the above; this is to let the testing case through
-    if (typeof uuid !== "string" || !verifyUUID(uuid)) {
-      res.status(500).json({
-        valid: false,
-        error: "Invalid UUID",
-        badgeInfo: null,
-      });
-      res.end();
-      return;
-    }
+  if (!verifyUUID(uuid)) {
+    res.status(500).json({
+      valid: false,
+      error: "Invalid UUID",
+      badgeInfo: null,
+    });
+    res.end();
+    return;
   }
   // Request badge from db
   return axios({

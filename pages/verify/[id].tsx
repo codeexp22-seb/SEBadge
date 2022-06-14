@@ -17,7 +17,7 @@ const VerifyBadge = () => {
   useEffect(() => {
     if (!router.isReady) return;
 
-    const badgeID = router.query.id as string;
+    const badgeID = (router.query.id as string).toUpperCase();
     axios({
       method: "get",
       url: `/api/verify`,
