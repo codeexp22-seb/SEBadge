@@ -27,17 +27,19 @@
 
   .textCol,
   .imageCol {
-    width: 100vw;
     min-height: 5em;
+    max-height: 30vmax;
+    min-width: 50vw;
+    max-width: 75vw;
   }
 
   .imageCol {
     order: 1;
-    max-height: 30vmax;
+    width: 60%;
   }
 
   .textCol {
     order: 2;
-    min-width: 50vw;
+    width: 100%;
   }
 }
