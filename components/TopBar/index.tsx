@@ -5,9 +5,11 @@ import styles from "./TopBar.module.css";
 const TopBar = (props: { homeButton?: boolean }) => {
   return (
     <div className={styles.topBar}>
-      <Link href="/verify">
-        <a className={styles.topBarTitle}>SEBadge</a>
-      </Link>
+      <div className={styles.topBarTitle}>
+        <Link href="/">
+          <a className={styles.topBarTitleLink}>SEBadge</a>
+        </Link>
+      </div>
       {props.homeButton && (
         <Link href="/verify">
           <a className={styles.topBarButton}>Verify another badge</a>

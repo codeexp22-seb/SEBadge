@@ -9,12 +9,22 @@
 }
 
 .topBarTitle {
-  font-weight: bold;
-  color: var(--seb-green-darker);
-  font-size: 2rem;
   display: block;
   width: fit-content;
   flex: auto 1 0;
+}
+
+.topBarTitleLink {
+  font-weight: bold;
+  color: var(--seb-green);
+  font-size: 2rem;
+  transition: all 0.2s;
+}
+
+.topBarTitleLink:hover,
+.topBarTitleLink:focus,
+.topBarTitleLink:active {
+  color: var(--seb-green-darker);
 }
 
 .topBarButton {
@@ -32,7 +42,8 @@
   text-align: center;
 }
 
-.topBarButton:hover, .topBarButton:focus {
+.topBarButton:hover,
+.topBarButton:focus {
   background-color: var(--seb-green);
   border-color: var(--seb-green);
   color: white;
