@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import TopBar from "../../components/TopBar";
 import VerifyForm from "../../components/VerifyForm";
 import verifyArt from "../../public/undraw_confirmation_re_b6q5.svg";

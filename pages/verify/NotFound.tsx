@@ -1,9 +1,6 @@
-import axios, { AxiosError, AxiosResponse } from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import type { BadgeInfo, VerifyData } from "../../util/verifyUtil";
 import TopBar from "../../components/TopBar";
-import BadgeView from "../../components/BadgeView";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import VerifyForm from "../../components/VerifyForm";
 import notFound from "../../public/undraw_no_data_re_kwbl.svg";

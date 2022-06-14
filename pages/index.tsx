@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import Router from 'next/router'
+import { useEffect } from "react";
+import { useRouter } from 'next/router'
 
 const Home = () => {
+  const router = useRouter()
   useEffect(() => {
-    Router.push('/verify')
+    router.push('/verify')
   });
 };
 
