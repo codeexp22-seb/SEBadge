@@ -1,0 +1,26 @@
+.title {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+}
+
+.errorPageContainer {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  gap: 3em;
+  min-width: 60vw;
+  align-items: center;
+}
+
+.textCol, .imageCol {
+  display: flex;
+  flex: auto 1 1;
+  max-width: 50%;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .errorPageContainer {
+    flex-direction: column;
+  }
+}

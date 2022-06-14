@@ -5,6 +5,8 @@ import type { BadgeInfo, VerifyData } from "../../util/verifyUtil";
 import TopBar from "../../components/TopBar";
 import BadgeView from "../../components/BadgeView";
 import LoadingSpinner from "../../components/LoadingSpinner";
+import ErrorDetail from "../../components/ErrorDetail";
+import errorImage from "../../public/undraw_server_down_s-4-lk.svg"
 
 const VerifyBadge = () => {
   const router = useRouter();
@@ -44,7 +46,13 @@ const VerifyBadge = () => {
           });
           return;
         } else {
-          setReturnBody(<p>ERROR: {data.error}</p>);
+          setReturnBody(
+            <ErrorDetail title="Error" imageSrc={errorImage}>
+            <p>An error occurred while trying to verify the badge.</p>
+            <p>Error: {data.error}</p>
+          </ErrorDetail>
+          
+          );
         }
         setLoading(false);
       });

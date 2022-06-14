@@ -1,10 +1,19 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
+import ErrorDetail from "../components/ErrorDetail";
+import TopBar from "../components/TopBar";
+import errorImage from "../public/undraw_access_denied_re_awnf.svg";
 
-const ServerError: NextPage = () => {
+const NotFound: NextPage = () => {
   return (
-    <p>Internal Server Error</p>
-  )
-  //TODO: make nicer
-}
+    <>
+      <TopBar homeButton />
+      <main>
+        <ErrorDetail title="Internal Server Error" imageSrc={errorImage}>
+          <p>Something went wrong. Try again?</p>
+        </ErrorDetail>
+      </main>
+    </>
+  );
+};
 
-export default ServerError
+export default NotFound;
