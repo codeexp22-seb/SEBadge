@@ -12,14 +12,16 @@ const BadgeView = (props: { badge: BadgeInfo; badgeID: string }) => {
   return (
     <div className={styles.badgeContainer}>
       <div className={styles.badgeCard}>
-        <Image
-          src={props.badge.badgeImage}
-          alt={`Badge icon for ${props.badge.badgeName}`}
-          width="100%"
-          height="100%"
-          layout="responsive"
-          objectFit="contain"
-        />
+        <div className={styles.badgeImage}>
+          <Image
+            src={props.badge.badgeImage}
+            alt={`Badge icon for ${props.badge.badgeName}`}
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+          />
+        </div>
         <p aria-hidden className={styles.badgeText}>
           {props.badge.badgeName}
         </p>

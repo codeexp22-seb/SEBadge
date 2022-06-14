@@ -25,6 +25,10 @@
   justify-content: center;
 }
 
+.badgeImage {
+  display: block;
+}
+
 .badgeText {
   font-size: 1.5rem;
   font-weight: bold;
