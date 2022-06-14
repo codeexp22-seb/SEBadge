@@ -14,11 +14,11 @@ async function handler(req: NextApiRequest, res: NextApiResponse<VerifyData>) {
   // Run CORS middleware
   await runMiddleware(req, res, cors);
 
-  const uuid = req.query.id;
+  const uuid = req.query.id as string;
 
   // Check UUID validity
   if (uuid !== "badgeID") {
-    // TODO: delete; this is to let the testing case through
+    // TODO: delete the above; this is to let the testing case through
     if (typeof uuid !== "string" || !verifyUUID(uuid)) {
       res.status(500).json({
         valid: false,

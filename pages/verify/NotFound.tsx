@@ -13,7 +13,7 @@ const BadgeNotFound = () => {
 
   useEffect(() => {
     if (!router.isReady) return;
-    const badgeID = `${router.query.id}`;
+    const badgeID = router.query.id as string;
     setReturnBody(
       <VerifyForm imageSrc={notFound} title="Badge not found" previousID={badgeID}>
         <p>
