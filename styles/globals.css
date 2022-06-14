@@ -24,6 +24,7 @@ main {
   align-items: center;
   padding: 1rem 3rem;
   flex: auto 1 1;
+  margin-top: -5em; /* account for top bar */
 }
 
 a {
