@@ -29,7 +29,6 @@ const VerifyBadge = () => {
       .then(function (response: AxiosResponse) {
         if (response.status === 200) {
           const data = response.data as VerifyData;
-          console.log(data);
           if (data.valid) {
             const badgeInfo = data.badgeInfo as BadgeInfo;
             setReturnBody(<BadgeView badge={badgeInfo} badgeID={badgeID} />);
