@@ -1,0 +1,29 @@
+.loader {
+  width: 10vmin;
+  height: 10vmin;
+  min-width: 64px;
+  min-height: 64px;
+  border: 6px solid #fff;
+  border-bottom-color: var(--seb-green);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  align-self: center;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.loadingContainer {
+  width: max-content;
+  height: max-content;
+  margin: auto;
+}

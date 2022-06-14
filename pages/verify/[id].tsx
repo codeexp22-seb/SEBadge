@@ -5,11 +5,13 @@ import type { BadgeInfo, VerifyData } from "../../util/verifyUtil";
 import styles from "../../styles/VerifyBadge.module.css";
 import TopBar from "../../components/TopBar";
 import BadgeView from "../../components/BadgeView";
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 const VerifyBadge = () => {
   const router = useRouter();
 
   const [returnBody, setReturnBody] = useState(<></>);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!router.isReady) return;
@@ -29,13 +31,10 @@ const VerifyBadge = () => {
           console.log(data);
           if (data.valid) {
             const badgeInfo = data.badgeInfo as BadgeInfo;
-            setReturnBody(
-              <main>
-                <BadgeView badge={badgeInfo} badgeID={badgeID} />
-              </main>
-            );
+            setReturnBody(<BadgeView badge={badgeInfo} badgeID={badgeID} />);
           }
         }
+        setLoading(false);
       })
       .catch((err: AxiosError) => {
         const data = err?.response?.data as VerifyData;
@@ -44,13 +43,14 @@ const VerifyBadge = () => {
         } else {
           setReturnBody(<p>ERROR: {data.error}</p>);
         }
+        setLoading(false);
       });
   }, [router.isReady]);
 
   return (
     <>
       <TopBar homeButton />
-      {returnBody}
+      <main>{isLoading ? <LoadingSpinner /> : returnBody}</main>
     </>
   );
 };
