@@ -38,9 +38,9 @@ const BadgeView = (props: { badge: BadgeInfo; badgeID: string }) => {
         </div>
         <p className={styles.description}>{props.badge.badgeDescription}</p>
         <CopyToClipboard text={copyURL} onCopy={() => setCopied(true)}>
-          <a className={styles.shareButton} href="#">
+          <button className={styles.shareButton}>
             Share
-          </a>
+          </button>
         </CopyToClipboard>
         {copied && <p className={styles.copiedText}>Link copied</p>}
       </div>

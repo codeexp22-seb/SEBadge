@@ -18,7 +18,7 @@ const VerifyForm = (props: {
         let path = "";
         let pathArray = idToVerify.split("/");
         path = path + pathArray.pop();
-        path = pathArray.pop() + "/" + path;
+        path = "/" + pathArray.pop() + "/" + path;
         Router.push(path);
       } else {
         // UUID
@@ -59,12 +59,14 @@ const VerifyForm = (props: {
             placeholder={props.previousID ? "XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX" : ""}
             onChange={({ target: { value } }) => setIdToVerify(value)}
             value={idToVerify ?? props.previousID ?? ""}
+            onKeyDown={(e) => e.keyCode === 13 ? submitForm() : null}
           ></input>
           <button
             formAction="submit"
             className={styles.submit}
             disabled={props.previousID ? true : false}
             onClick={() => submitForm()}
+            onKeyDown={(e) => e.keyCode === 13 ? submitForm() : null}
           >
             Verify
           </button>
