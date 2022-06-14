@@ -2,7 +2,6 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import type { BadgeInfo, VerifyData } from "../../util/verifyUtil";
-import styles from "../../styles/VerifyBadge.module.css";
 import TopBar from "../../components/TopBar";
 import BadgeView from "../../components/BadgeView";
 import LoadingSpinner from "../../components/LoadingSpinner";
@@ -39,7 +38,11 @@ const VerifyBadge = () => {
       .catch((err: AxiosError) => {
         const data = err?.response?.data as VerifyData;
         if (err?.response?.status === 404) {
-          setReturnBody(<p>BADGE {badgeID} NOT FOUND</p>);
+          router.push({
+            pathname: "/verify/NotFound",
+            query: { id: badgeID },
+          });
+          return;
         } else {
           setReturnBody(<p>ERROR: {data.error}</p>);
         }
