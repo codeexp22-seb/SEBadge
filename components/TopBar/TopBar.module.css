@@ -8,6 +8,12 @@
   flex: auto 0 0;
 }
 
+.topBarIcon {
+  display: block;
+  min-width: 2.5rem;
+  flex: auto 0 0;
+}
+
 .topBarTitle {
   display: block;
   width: fit-content;
