@@ -7,17 +7,17 @@ import logo from "../../public/SEB_logo.svg";
 const TopBar = (props: { homeButton?: boolean }) => {
   return (
     <div className={styles.topBar}>
-      <div className={styles.topBarIcon}>
-        <Image
-          src={logo}
-          alt="SEB logo"
-          width="100%"
-          height="100%"
-          layout="responsive"
-          objectFit="contain"
-        ></Image>
-      </div>
       <div className={styles.topBarTitle}>
+        <div className={styles.topBarIcon}>
+          <Image
+            src={logo}
+            alt="SEB logo"
+            width="100%"
+            height="100%"
+            layout="responsive"
+            objectFit="contain"
+          ></Image>
+        </div>
         <Link href="/">
           <a className={styles.topBarTitleLink}>SEBadge</a>
         </Link>

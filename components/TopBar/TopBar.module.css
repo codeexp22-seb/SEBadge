@@ -15,9 +15,11 @@
 }
 
 .topBarTitle {
-  display: block;
+  display: flex;
   width: fit-content;
   flex: auto 1 0;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .topBarTitleLink {
