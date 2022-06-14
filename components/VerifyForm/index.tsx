@@ -10,6 +10,7 @@ const VerifyForm = (props: {
   children: any;
 }) => {
   const [idToVerify, setIdToVerify] = useState(props.previousID ?? "");
+  const [submitDisabled, setSubmitDisabled] = useState(true);
 
   function submitForm() {
     if (idToVerify) {
@@ -27,6 +28,11 @@ const VerifyForm = (props: {
     } else {
       return;
     }
+  }
+
+  function handleTextChange(val: string) {
+    setSubmitDisabled(val === props.previousID || val === "");
+    setIdToVerify(val);
   }
 
   return (
@@ -57,16 +63,16 @@ const VerifyForm = (props: {
             name="id"
             id="badgeid"
             placeholder={props.previousID ? "XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX" : ""}
-            onChange={({ target: { value } }) => setIdToVerify(value)}
+            onChange={({ target: { value } }) => handleTextChange(value)}
             value={idToVerify ?? props.previousID ?? ""}
-            onKeyDown={(e) => e.keyCode === 13 ? submitForm() : null}
+            onKeyDown={(e) => (e.keyCode === 13 ? submitForm() : null)}
           ></input>
           <button
             formAction="submit"
             className={styles.submit}
-            disabled={props.previousID ? true : false}
+            disabled={submitDisabled}
             onClick={() => submitForm()}
-            onKeyDown={(e) => e.keyCode === 13 ? submitForm() : null}
+            onKeyDown={(e) => (e.keyCode === 13 ? submitForm() : null)}
           >
             Verify
           </button>

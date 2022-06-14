@@ -59,6 +59,7 @@
 }
 
 .submit:disabled {
+  cursor: default;
   background-color: var(--seb-green-faded);
 }
 
